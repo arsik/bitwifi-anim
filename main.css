@@ -1,0 +1,109 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background: #D5EEEB;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clip {
+  width: 545px;
+  height: 320px;
+
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+
+  position: relative;
+  perspective: 1000px;
+}
+
+.clip__cube {
+  width: 86px;
+  height: 100px;
+  margin: 55px 0 0 0;
+  z-index: 1;
+  
+  animation: cube 1s infinite alternate
+}
+
+.clip__circles {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: rotateX(60deg) translateY(-160px)
+}
+
+.pulse {
+  stroke: #EB016E; 
+  stroke-width: 5px;
+  stroke-opacity: 1;
+  fill: white;
+  fill-opacity: 0;
+  transform-origin: 50% 50%;
+  animation-duration: 2.5s;
+  animation-name: pulse;
+  animation-iteration-count: infinite;
+}
+
+.pulse.medium {
+  stroke-width: 3px;
+  animation-duration: 2s;
+  animation-name: pulse-medium;
+}
+.pulse.big {
+  stroke-width: 2px;
+  animation-duration: 1.5s;
+  animation-name: pulse-big;
+}
+
+@keyframes pulse {
+  from {
+    stroke-opacity: 1;
+    transform: scale(0.3);
+  }
+  to {
+    stroke-opacity: 0;
+    transform: scale(0.65);
+  }
+}
+
+@keyframes pulse-medium {
+  from {
+    stroke-opacity: 1;
+    transform: scale(0.25);
+  }
+  to {
+    stroke-opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes pulse-big {
+  from {
+    stroke-opacity: 1;
+    transform: scale(0.25);
+  }
+  to {
+    stroke-opacity: 0;
+    transform: scale(2);
+  }
+}
+
+
+@keyframes cube {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
