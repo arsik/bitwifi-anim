@@ -17,13 +17,32 @@ body {
 .clip {
   width: 545px;
   height: 320px;
+}
 
+.clip.with-bg .clip__content {
+  margin-top: -76px;
+}
+
+.clip__content {
   display: flex;
   justify-content: center;
   flex-shrink: 0;
 
+  width: 100%;
+  height: 100%;
+
   position: relative;
   perspective: 1000px;
+}
+
+.clip__bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 76px 0 0 20px;
+  width: 100%;
+  height: 100%;
+  background: url('bg.png') no-repeat center center / cover;
 }
 
 .clip__cube {
@@ -33,6 +52,12 @@ body {
   z-index: 1;
   
   animation: cube 1s infinite alternate
+}
+
+.clip__cube.small {
+  width: 35px;
+  height: 40px;
+  margin: 110px;
 }
 
 .clip__circles {
